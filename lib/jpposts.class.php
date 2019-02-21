@@ -127,13 +127,13 @@ class jpposts {
     
     // linkback text
     $linkback = apply_filters('the_content', $this->getlinkback());
-    
+
     // do we have a featured image?
     if($imgID = get_post_thumbnail_id($this->post->ID)){
       $img = wp_get_attachment_image($imgID, 'full', false, array('style' => 'max-width: 100%; margin: 0 auto; display: block;'));
       if($img){ $the_event = $img . $the_event; }
     }
-    
+		
     // either prepend or append the header to $the_event, depending on the config setting
     // remember that 0 is at the top, 1 at the bottom
     $the_event = ($this->options['header_loc'] > 0) ? $the_event . $linkback : $linkback . $the_event ;
@@ -210,6 +210,10 @@ class jpposts {
   // if jID is TRUE, this is checking whether we're crossposting to this journal (and does not re-check privacy settings)
   // ... that behaviour is probably kinda dumb but idk
   private function canxp($jID = false){
+		// not a post
+		if($this->post->post_type != 'post')
+			{ return false; }
+		
     // just regular public posts
     if(!$jID && $this->post->post_status == 'publish' && post_password_required($this->post->ID) !== true)
       { return true; }

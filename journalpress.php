@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: JournalPress v1.0 (beta)
-Plugin URI: https://github.com/alisinfinite/journalpress
+Plugin URI: https://github.com/alisinfinite/journalpress/
 Description: Mirrors your WordPress blog to any number of LiveJournal-based external journalling sites. Supports per-journal-per-post userpics and custom permission levels via the separate WP-Flock plugin. v1.0 is is an almost total rewrite, so please make sure to check your journals and settings are still correct!
 Version: 1.0β
 Author: Alis

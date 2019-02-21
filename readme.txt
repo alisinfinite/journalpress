@@ -1,7 +1,6 @@
 === JournalPress ===
 Contributors: alisdee
 Tags: livejournal, dreamwidth, crossposting, community, post, posts, social, update
-Plugin URI: https://github.com/alisinfinite/journalpress
 Requires at least: 4.9.1
 Tested up to: 5.0.3
 Stable tag: 1.0
