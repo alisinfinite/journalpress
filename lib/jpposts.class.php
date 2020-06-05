@@ -188,7 +188,6 @@ class jpposts {
     $jmeta = array(
       // userpic!
       'picture_keyword' => $this->getuserpic($jID),
-      'opt_backdated'   => $this->isbackdated($jID),
     );
     return $jmeta;
   }
@@ -382,15 +381,6 @@ class jpposts {
   // TODO: integration with WP-Flock if i ever rewrite it...
   private function getmask(){
     return 0;
-  }
-  
-  // another placeholder, since the bulk export functionality is gone
-  private function isbackdated($jID){
-    // if( $o['jp_bulk'] === true )
-    if(!$this->isnew($jID))
-      { return 1; }
-    else
-      { return 0; }
   }
   
   private function getuserpic($jID){
