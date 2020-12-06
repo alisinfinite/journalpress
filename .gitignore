@@ -1,2 +1,7 @@
 
 .DS_Store
+admin/.svn/all-wcprops
+admin/.svn/entries
+*.svn-base
+lib/.svn/all-wcprops
+lib/.svn/entries

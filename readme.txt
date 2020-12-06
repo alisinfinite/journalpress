@@ -2,8 +2,8 @@
 Contributors: alisdee
 Tags: livejournal, dreamwidth, crossposting, community, post, posts, social, update
 Requires at least: 4.9.1
-Tested up to: 5.0.3
-Stable tag: 1.0
+Tested up to: 5.5.3
+Stable tag: 1.1
 
 A cross-poster supporting multiple LiveJournal Server journals.
 
@@ -16,6 +16,9 @@ A cross-poster supporting multiple LiveJournal Server journals.
 * support for posts created from interfaces (i.e. XML-RPC, Atom)
 * mood, music and location support
 * per-post-per-journal userpic selection.
+
+= Version 1.1 =
+* Updated instructions for using API keys.
 
 = Version 1.0 =
 * Significant code rewrite, so make sure to check your **settings** and **journals** as some config items may not have migrated exactly as expected!

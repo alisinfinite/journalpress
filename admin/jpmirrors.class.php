@@ -339,8 +339,9 @@ class jpmirrors {
 		<td><input name="new[username]" type="text" id="jp_username" class="regular-text"></td>
   </tr>
   <tr>
-    <th scope="row">Password</th>
-		<td><input name="new[pword]" type="password" id="jp_pword" class="regular-text"></td>
+    <th scope="row">Password/API key</th>
+		<td><input name="new[pword]" type="password" id="jp_pword" class="regular-text">
+      <p class="description">You may need to use a <a href="https://www.dreamwidth.org/manage/emailpost">generated API</a> key rather than your password.</p></td>
   </tr>
   <tr>
 		<th scope="row">Post in community</th>
@@ -370,10 +371,10 @@ class jpmirrors {
   <?php wp_nonce_field('jp_edit_'. $m['journalID']); ?>
   <table class="form-table"><tbody>
   <tr>
-    <th scope="row">Change password</th>
+    <th scope="row">Change password/API key</th>
     <td>
       <input name="jp_pword" type="password" id="jp_pword" size="40" />
-      <p class="description">Leave this field blank to keep the current password.</p>
+      <p class="description">Leave this field blank to keep the current password/API key.</p>
     </td>
   </tr>
   <tr>
