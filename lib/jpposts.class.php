@@ -188,7 +188,6 @@ class jpposts {
     $jmeta = array(
       // userpic!
       'picture_keyword' => $this->getuserpic($jID),
-      'opt_backdated'   => $this->isbackdated($jID),
     );
     return $jmeta;
   }
@@ -277,7 +276,13 @@ class jpposts {
     
     return $the_event;
   }
-  
+
+  // Return an image tag linking to a count of the comments on the Wordpress post.
+  private function comment_count_image($post_id) {
+      $link = plugins_url( "wp-lj-comments.php?post_id=".$post_id , __FILE__ );
+      return '<img src="'.$link.'" border="0">';
+  }
+ 
   // format the post header/footer
   private function getlinkback(){
     // insert the name of the page we're linking back to based on the options set
@@ -287,13 +292,15 @@ class jpposts {
         '[blog_name]',
         '[blog_link]',
         '[permalink]',
-        '[comments_link]'
+	'[comments_link]',
+	'[comments_count]'
       );
     $replace = array(
         $blogName,
         get_option('home'),
         get_permalink($this->post->ID),
-        get_permalink($this->post->ID).'#comments'
+	get_permalink($this->post->ID).'#comments',
+	$this->comment_count_image($this->post->ID)
       );
       
     return str_replace($find, $replace, $this->options['custom_header']);
@@ -374,15 +381,6 @@ class jpposts {
   // TODO: integration with WP-Flock if i ever rewrite it...
   private function getmask(){
     return 0;
-  }
-  
-  // another placeholder, since the bulk export functionality is gone
-  private function isbackdated($jID){
-    // if( $o['jp_bulk'] === true )
-    if(!$this->isnew($jID))
-      { return 1; }
-    else
-      { return 0; }
   }
   
   private function getuserpic($jID){

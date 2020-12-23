@@ -55,6 +55,8 @@ class jpsettings {
          '  <dd class="description">The blog\'s permalink for your post.</dd>'.
          '  <dt class="description"><kbd>[comments_link]</kbd></dt>'.
          '  <dd class="description">The URL for comments. Generally this is the permalink URL with #comments on the end.</dd>'.
+         '  <dt class="description"><kbd>[comments_count]</kbd></dt>'.
+         '  <dd class="description">A count of the number of comments on original post.</dd>'.
          '</dl> ';
   }
   
